@@ -27,3 +27,15 @@ module "user_assigned_identity" {
     user_assigned_identities = try(var.user_assigned_identities, [])
     depends_on = []
 }
+
+module "private_endpoint" {
+    source = "../../modules/private_endpoint"
+    private_endpoints = try(var.private_endpoints, [])
+    depends_on = []
+}
+
+module "private_dns_zone" {
+    source = "../../modules/private_dns_zone"
+    private_dns_zones = try(var.private_dns_zones, [])
+    depends_on = []
+}

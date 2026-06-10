@@ -29,3 +29,7 @@ default = []
 variable "private_dns_zones" {
 default = []
 }
+
+variable "private_dns_zones" {
+default = []
+}
