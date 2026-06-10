@@ -21,3 +21,11 @@ default = []
 variable "key_vaults" {
 default = []
 }
+
+variable "private_endpoints" {
+default = []
+}
+
+variable "private_dns_zones" {
+default = []
+}
