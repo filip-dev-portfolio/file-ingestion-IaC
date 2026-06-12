@@ -1,6 +1,6 @@
 locals {
     key_vaults = {
-        for kv in flatten(
+        for kv_ in flatten(
             [
                 for kv in try(var.key_vaults, []): merge(
                     {
@@ -8,6 +8,8 @@ locals {
                         enable_for_disk_encryption = try(kv.enable_for_disk_encryption, false)
                         enable_for_rbac_authorization = try(kv.enable_for_rbac_authorization, true)
                         soft_delete_retention_days = try(kv.soft_delete_retention_days, 90)
+                        network_acls = []
+                        customer_managed_keys = []
 
                     },kv
                 )
