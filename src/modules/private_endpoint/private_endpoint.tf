@@ -10,7 +10,7 @@ resource "azurerm_private_endpoint" "pe" {
     private_service_connection {
         name                           = "${each.value.pe_name}-psc"
         is_manual_connection            = each.value.is_manual_connection
-        private_connection_resource_id  = each.value.private_connection_resource_id
+        private_connection_resource_id  = data.azurerm_key_vault.kv[each.value.kv_name].id
         subresource_names               = each.value.subresource_names
         request_message                 = each.value.is_manual_connection ? "Please approve this connection." : null
     }
