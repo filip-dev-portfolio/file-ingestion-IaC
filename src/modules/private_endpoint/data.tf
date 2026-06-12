@@ -12,3 +12,13 @@ data "azurerm_private_dns_zone" "pdz" {
     name                = each.value.private_dns_zone_name
     resource_group_name = each.value.private_dns_zone_rg
 }
+
+data "azurerm_key_vault" "kv" {
+  for_each = {
+    for pe in var.private_endpoints :
+    pe.kv_name => pe
+  }
+
+  name                = each.value.kv_name
+  resource_group_name = each.value.resource_group
+}
