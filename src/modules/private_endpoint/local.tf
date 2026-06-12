@@ -8,6 +8,9 @@ locals {
                     resource_group_name = pe.resource_group_name
                     custom_network_interface_name = pe.custom_network_interface_name
                     is_manual_connection = try(pe.is_manual_connection, null)
+                    kv_name = null
+                    subresource_names = try(pe.subresource_names, [])
+                    pe_nic_name = try((pe.custom_network_interface_name != null ? pe.custom_network_interface_name : pe.pe_nic_name), null)
                 }, pe
             )
         ]): pep.pe_name => pep
