@@ -33,3 +33,7 @@ default = []
 variable "private_dns_zones" {
 default = []
 }
+
+variable "logic_apps" {
+  default = []
+}
