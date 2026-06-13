@@ -164,6 +164,11 @@ Examples:
 | Service | Private DNS Zone |
 |----------|----------|
 | Blob Storage | `privatelink.blob.core.windows.net` |
+| Blob Storage | `privatelink.web.core.windows.net` |
+| Blob Storage | `privatelink.queue.core.windows.net` |
+| Blob Storage | `privatelink.table.core.windows.net` |
+| Blob Storage | `privatelink.file.core.windows.net` |
+| Blob Storage | `privatelink.dfs.core.windows.net` |
 | Key Vault | `privatelink.vaultcore.azure.net` |
 
 Each zone is linked to the Virtual Network to allow workloads to resolve service endpoints to private IP addresses.
